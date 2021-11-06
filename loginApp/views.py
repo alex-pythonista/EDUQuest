@@ -68,3 +68,9 @@ def login_page(request):
         context = {}
         template_name = 'loginApp/login.html'
         return render(request, template_name, context)
+
+
+@login_required 
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('loginApp:login'))
