@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-{% block css_block %}
+{% load static %}
+{% block css_content %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 
@@ -43,7 +44,7 @@
                     </div>
                     {% csrf_token %}
                 </form>
-                <a href="#">Already have an account?</a>
+                <a href="{% url 'loginApp:login' %}">Already have an account?</a>
         </div>
     </div>
     <script>

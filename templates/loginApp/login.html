@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block css_content %}
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% endblock %}
 
+{% block body_content %}
     <div class="wrapper">
         <div class="title-text">
             <div class="title login">
@@ -29,7 +31,7 @@
                 {% csrf_token %}
             </form>
             <div class="signup-link">
-                Not a member? <a href="register.html">Signup now</a>
+                Not a member? <a href="{% url 'loginApp:register' %}">Signup now</a>
             </div>
             </div>
         </div>
