@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block body_content %}
+    <div class="wrapper">
+        <div class="form-container form-inner">
+                <div class="title signup">
+                    Signup
+                </div>
+                <form action="#" method="POST" class="signup">
+                    <div class="field">
+                        <input type="text" name="fullname" placeholder="Full Name" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="department" placeholder="Department" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="semester" placeholder="Semester" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="student_id" placeholder="Student_ID" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="address" placeholder="Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password1" placeholder="Password" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password2" placeholder="Confirm password" required>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Signup">
+                    </div>
+                    {% csrf_token %}
+                </form>
+                <a href="#">Already have an account?</a>
+        </div>
+    </div>
+    <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (() => {
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (() => {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        });
+    </script>
+{% endblock %}
