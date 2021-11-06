@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block css_content %}
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% endblock %}
 
+{% block body_content %}
     <div class="wrapper">
         <div class="title-text">
             <div class="title login">
@@ -13,8 +15,9 @@
         </div>
         <div class="form-container form-inner">
             <form action="#" method="POST" class="login">
+                {% csrf_token %}
                 <div class="field">
-                    <input type="text" name="email" placeholder="Email" required>
+                    <input type="text" name="username" placeholder="username" required>
                 </div>
                 <div class="field">
                     <input type="password" name="password" placeholder="Password" required>
@@ -26,10 +29,9 @@
                     <div class="btn-layer"></div>
                     <input type="submit" value="Login">
                 </div>
-                {% csrf_token %}
             </form>
             <div class="signup-link">
-                Not a member? <a href="register.html">Signup now</a>
+                Not a member? <a href="{% url 'loginApp:register' %}">Signup now</a>
             </div>
             </div>
         </div>
