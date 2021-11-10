@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% endblock %}
+{% block js_content %}
+{% endblock %}
 
 {% block body_content %}
     <div class="wrapper">
@@ -14,7 +16,7 @@
             </div>
         </div>
         <div class="form-container form-inner">
-            <form action="#" method="POST" class="login">
+            <form name="loginForm" action="#" method="POST" class="login" onsubmit="return validateForm()">
                 {% csrf_token %}
                 <div class="field">
                     <input type="text" name="username" placeholder="username" required>
