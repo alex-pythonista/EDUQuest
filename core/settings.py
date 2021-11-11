@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # EDUQuest apps
     'loginApp.apps.LoginappConfig',
+    'studentApp.apps.StudentappConfig',
 ]
 
 MIDDLEWARE = [

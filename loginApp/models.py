@@ -5,11 +5,11 @@ from django.contrib.auth.models import User
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.DO_NOTHING, related_name='student_user')
-    fullname = models.CharField(max_length=200)
-    department = models.CharField(max_length=100)
+    fullname = models.CharField(max_length=200, default='UNKNOWN')
+    department = models.CharField(max_length=10, default='UNKNOWN')
     semester = models.CharField(max_length=50)
-    student_id = models.CharField(max_length=9)
-    address = models.CharField(max_length=500)
+    student_id = models.CharField(max_length=10, primary_key=True)
+    address = models.CharField(max_length=500, default='UNKNOWN')
 
     def __str__(self):
         return self.fullname + " " + self.student_id
