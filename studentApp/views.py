@@ -9,9 +9,8 @@ def dev_page(request):
     template_name = 'dev.html'
     return render(request, template_name, context)
 
-def profile_view(request, *args, **kwargs): 
-    return HttpResponse("<h1>Student Profile</h1>") 
-    #return render(request, "profile.html", {})
+def profile_view(request, *args, **kwargs):  
+    return render(request, "profile.html", {})
 
 def catalog_view(request,*args, **kwargs): 
     return HttpResponse("<h1>Course Catalog</h1>") 
