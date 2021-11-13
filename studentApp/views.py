@@ -9,10 +9,6 @@ def dev_page(request):
     template_name = 'dev.html'
     return render(request, template_name, context)
 
-def home_view(request, *args, **kwargs): 
-    return HttpResponse("<h1>Landing Page</h1>")
-    # return render(request, "home.html", {})
-
 def profile_view(request, *args, **kwargs): 
     return HttpResponse("<h1>Student Profile</h1>") 
     #return render(request, "profile.html", {})
