@@ -9,31 +9,54 @@ def dev_page(request):
     template_name = 'dev.html'
     return render(request, template_name, context)
 
-def profile_view(request, *args, **kwargs):  
-    return render(request, "profile.html", {})
+def profile_view(request, *args, **kwargs): 
+    context = {}
+    template_name = 'profile.html' 
+    return render(request,template_name, context)
 
-def catalog_view(request,*args, **kwargs): 
+def catalog_view(request,*args, **kwargs):
+    context = {}
+    template_name = 'catalog.html'
     return HttpResponse("<h1>Course Catalog</h1>") 
+    #return render(request,template_name, context)
 
 def routine_view(request,*args, **kwargs): 
+    context = {}
+    template_name = 'routine.html'
     return HttpResponse("<h1>Personalized Routine</h1>") 
-    #return render(request, "routine.html", {})
+    #return render(request,template_name, context)
 
 def schedule_checker_view(request,*args, **kwargs): 
+    context = {}
+    template_name = 'schedule_checker.html'
     return HttpResponse("<h1>Schedule Checker</h1>") 
 
 def progress_view(request,*args, **kwargs): 
+    context = {}
+    template_name = 'progress.html'
     return HttpResponse("<h1>Course Progress</h1>") 
+    #return render(request,template_name, context)
 
 def instructor_view(request,*args, **kwargs): 
-    return HttpResponse("<h1>Instructor Profile</h1>") 
+    context = {}
+    template_name = 'instructor.html'
+    #return HttpResponse("<h1>Instructor Profile</h1>") 
+    return render(request,template_name, context)
 
 def finances_view(request,*args, **kwargs): 
+    context = {}
+    template_name = 'finances.html'
     return HttpResponse("<h1>Finances</h1>")
-    
+    #return render(request,template_name, context)
+        
 def forum_view(request,*args, **kwargs): 
+    context = {}
+    template_name = 'forum.html'
     return HttpResponse("<h1>Discussion Forum</h1>") 
+    #return render(request,template_name, context)
 
 def bus_schedule_view(request,*args, **kwargs): 
+    context = {}
+    template_name = 'bus_schedule.html'
     return HttpResponse("<h1>Bus Schedule</h1>") 
-    #return render(request, "bus_schedule.html", {})
+    #return render(request,template_name, context)

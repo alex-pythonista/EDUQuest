@@ -2,14 +2,13 @@
 {% load static %}
 {% block css_content %}
 
-<link rel="stylesheet" href="{% static 'css/student_profile1.css' %}">
+<link rel="stylesheet" href="{% static 'css/inst_profile2.css' %}">
 
 {% endblock %}
 {% block js_content %}
 {% endblock %}
 
 {% block body_content %}
-
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -23,9 +22,6 @@
   </head>
   <body>
       
-   
-
-
     <input type="checkbox" id="check">
     <!--header area start-->
     <header>
@@ -79,11 +75,16 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
     
         <!--Only for demo purpose - no need to add.-->
-        <link rel="stylesheet" href="{% static 'css/student_profile1.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/inst_profile1.css' %}" />
         
-            <link rel="stylesheet" href="{% static 'css/student_profile2.css' %}">
+            <link rel="stylesheet" href="{% static 'css/inst_profile2.css' %}">
     </head>
     <body>
+      
+      <div  class="topnav" >
+        <input  type="text" placeholder="Search..">
+        
+      </div>
             
  
     
@@ -101,65 +102,68 @@
           <div class="col-lg-4">
             <div class="card shadow-sm">
               <div class="card-header bg-transparent text-center">
-                <img class="profile_img" src="{% static 'images/tawuf.jpg' %}" alt="student dp">
-                <h3>Tawuf Chowdhury</h3>
+                <img class="profile_img" src="{% static 'images/nazim.png' %}"alt="instructor dp">
+                <h3>Dr. Mohammed Nazim Uddin</h3>
               </div>
               <div class="card-body">
-                <p class="mb-0"><strong class="pr-1">Student ID:</strong>192001112</p>
-                <p class="mb-0"><strong class="pr-1">Program:</strong>B.Sc.</p>
-                <p class="mb-0"><strong class="pr-1">Address:</strong>Hathazari , Chattogram</p>
+                
+                <h6>Professor & Associate Dean</h6>
+                <h6 >School of Science & Engineering</h6>
+                <h6>Email: nazim@eastdelta.edu.bd</h6>
+              </p>
+                
+              
+                
               </div>
             </div>
           </div>
           <div class="col-lg-8">
             <div class="card shadow-sm">
               <div class="card-header bg-transparent border-0">
-                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Educational Qualification:</h3>
               </div>
               <div class="card-body pt-0">
                 <table class="table table-bordered">
                  
-                  <tr>
-                    <th width="30%">Semester	</th>
-                    <td width="2%">:</td>
-                    <td>8th</td>
-                  </tr>
                   
                   <tr>
-                    <th width="30%">Department</th>
-                    <td width="2%">:</td>
-                    <td>Computer Science & Engineering</td>
+                    <td width="30%">Doctor of Philosophy (PhD) Computer Science and Engineering<br>Inha University</td>
+                    <td width ="4%">South Korea</td>
+                  </tr>
+                    <td width ="30%">Master of Computer Science<br>University of Pune</td>
+                    <td width ="2%">India</td>
                   </tr>
                   <tr>
-                    <th width="30%">Credit completed</th>
-                    <td width="2%">:</td>
-                    <td>90</td>
+                    <td >Bachelor of Computer Science<br>University of Pune</td>
+                     <td width ="2%">India</td>
+                  </tr>
+                  
+                  
+                </table>
+                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Researches & Publications </h3>
+                <table class="table table-bordered">
+                 
+                  <tr><td>
+                    1. <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EtpxnzQAAAAJ&citation_for_view=EtpxnzQAAAAJ:LkGwnXOMwfcC">Semantic similarity measures for enhancing information retrieval in folksonomies
+MN Uddin, TH Duong, NT Nguyen, XM Qi, GS Jo
+Expert Systems with Applications 40 (5), 1645-1653</a>
+</td></tr>
+                  <tr>
+                    <td>
+                      2. <a href ="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EtpxnzQAAAAJ&citation_for_view=EtpxnzQAAAAJ:Y0pCki6q_DkC">The IoT: Exciting possibilities for bettering lives: Special application scenarios
+SMR Islam, MN Uddin, KS Kwak
+IEEE Consumer Electronics Magazine 5 (2), 49-57</a>
+                    </td>
                   </tr>
                   <tr>
-                    <th width="30%">Credit remaining</th>
-                    <td width="2%">:</td>
-                    <td>71</td>
+                    <td>
+                      3.<a href= "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EtpxnzQAAAAJ&citation_for_view=EtpxnzQAAAAJ:ufrVoPGSRksC">  Contextual information search based on ontological user profile
+NU Mohammed, TH Duong, GS Jo
+International Conference on Computational Collective Intelligence, 490-500</a><br>
+<a href ="https://scholar.google.com/citations?user=EtpxnzQAAAAJ&hl=en">see more</a>
+                    </td>
                   </tr>
-                  <tr>
-                    <th width="30%">Credit taken</th>
-                    <td width="2%">:</td>
-                    <td>16.5</td>
-
-                    <tr>
-                      <th width="30%">CGPA</th>
-                      <td width="2%">:</td>
-                      <td>3.70</td>
-                  </tr>
-                  <!-- <tr>
-                    <th width="30%">Blood group</th>
-                    <td width="2%">:</td>
-                    <td>AB+</td>
-                  </tr> -->
-                  <!-- <tr>
-                    <th width="30%">Gender</th>
-                    <td width="2%">:</td>
-                    <td>Male</td>
-                  </tr> -->
+                  
                 </table>
               </div>
             </div>
@@ -183,6 +187,4 @@
 
   </body>
 </html>
-      
-
 {% endblock %}
