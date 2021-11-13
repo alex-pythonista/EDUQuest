@@ -80,11 +80,14 @@ class section(models.Model):
     class Meta: 
         unique_together = ('course_id', 'section_id', 'sem_code',)
 
+
+"""With alex"""
 # class teaches(models.Model): 
 #     inst_id = models.ForeignKey(instructor, on_delete = models.DO_NOTHING, primary_key=True) 
 #     course_id = models.ForeignKey(course, on_delete = models.DO_NOTHING)
 #     section_id = models.ForeignKey(section, on_delete= models.DO_NOTHING)
 #     sem_code = models.ForeignKey(section, on_delete= models.DO_NOTHING)
+
 
 #     class Meta: 
 #         unique_together = ('inst_id', 'course_id', 'section_id', 'sem_code',)
