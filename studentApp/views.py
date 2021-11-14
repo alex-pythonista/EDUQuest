@@ -34,8 +34,8 @@ def schedule_checker_view(request,*args, **kwargs):
 def progress_view(request,*args, **kwargs): 
     context = {}
     template_name = 'progress.html'
-    return HttpResponse("<h1>Course Progress</h1>") 
-    #return render(request,template_name, context)
+    # return HttpResponse("<h1>Course Progress</h1>") 
+    return render(request,template_name, context)
 
 def instructor_view(request,*args, **kwargs): 
     context = {}

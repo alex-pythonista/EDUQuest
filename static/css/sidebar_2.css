@@ -23,7 +23,7 @@ body{
   }
   
   .left_area span{
-    color: #f4f6f7;
+    color: #19B3D3;
   }
   
   .logout_btn{
@@ -71,7 +71,6 @@ body{
     width: 100px;
     height: 100px;
     
-  
     margin-bottom: 10px;
   }
   
@@ -104,9 +103,9 @@ body{
   label #sidebar_btn{
     z-index: 1;
     color: #fff;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
-    left: 20px; 
+    left: 230px;
     font-size: 20px;
     margin: 5px 0;
     transition: 0.5s;
@@ -236,7 +235,7 @@ body{
       text-decoration: none;
       box-sizing: border-box;
       transition: 0.5s;
-      /* transition-property: background; */
+      transition-property: background;
     }
   
     .mobile_nav_items a:hover{
