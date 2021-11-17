@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar Dashboard Template</title>
+    <link rel="stylesheet" href="{% static 'css/studentApp/sidebar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+      
+   
+
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3 style="color:rgb(83, 12, 6);">EDUQuest</h3>
+      
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+        <a href="#"><i class="fas fa-book"></i><span>Course Catalog</span></a>
+        <a href="#"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+        <a href="#"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+        <a href="#"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+        <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+        <a href="#"><i class="fas fa-donate"></i><span>Finances</span></a>
+        <a href="#"><i class="fas fa-comments"></i><span>Discussion Form</span></a>
+        <a href="#"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
+       
+      </div>
+      <a href="#"><i class="fas fa-book"></i><span>Course Catalog</span></a>
+      <a href="#"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+      <a href="#"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+      <a href="#"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+      <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+      <a href="#"><i class="fas fa-donate"></i><span>Finances</span></a>
+      <a href="#"><i class="fas fa-comments"></i><span>Discussion Form</span></a>
+      <a href="#"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+    </div>
+    
+    <div class="content">
+      
+    
+        <meta name="author" content="Codeconvey" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+    
+        <!--Only for demo purpose - no need to add.-->
+        <link rel="stylesheet" href="{% static 'css/studentApp/demo.css' %}" />
+        
+            <link rel="stylesheet" href="{% static 'css/studentApp/studentProfile.css' %}">
+    </head>
+    <body>
+            
+ 
+    
+  
+    
+    <section>
+        <div class="rt-container">
+              <div class="col-rt-12">
+                  <div class="Scriptcontent">
+                  
+    <!-- Student Profile -->
+    <div class="student-profile py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card shadow-sm">
+              <div class="card-header bg-transparent text-center">
+                <img class="profile_img" src="{% static 'images/dev-images/tawuf.jpg' %}" alt="student dp">
+                <h3>Tawuf Chowdhury</h3>
+              </div>
+              <div class="card-body">
+                <p class="mb-0"><strong class="pr-1">Student ID:</strong>192001112</p>
+                <p class="mb-0"><strong class="pr-1">Program:</strong>B.Sc.</p>
+                <p class="mb-0"><strong class="pr-1">Address:</strong>Hathazari , Chattogram</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card shadow-sm">
+              <div class="card-header bg-transparent border-0">
+                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information <input type="button" value="Edit" style="float: right;"></h3>
+              </div>
+              <div class="card-body pt-0">
+                <table class="table table-bordered">
+                 
+                  <tr>
+                    <th width="30%">Semester	</th>
+                    <td width="2%">:</td>
+                    <td>8th</td>
+                  </tr>
+                  
+                  <tr>
+                    <th width="30%">Department</th>
+                    <td width="2%">:</td>
+                    <td>Computer Science & Engineering</td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Credit completed</th>
+                    <td width="2%">:</td>
+                    <td>90</td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Credit remaining</th>
+                    <td width="2%">:</td>
+                    <td>71</td>
+                  </tr>
+                  <tr>
+                    <th width="30%">Credit taken</th>
+                    <td width="2%">:</td>
+                    <td>16.5</td>
+
+                    <tr>
+                      <th width="30%">CGPA</th>
+                      <td width="2%">:</td>
+                      <td>3.70</td>
+                  </tr>
+                  
+                  <tr>
+                    <th width="30%">Gender</th>
+                    <td width="2%">:</td>
+                    <td>Male</td>
+                  </tr>
+                </table>
+                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Enrolled Courses:</h3>
+              </div>
+              <div class="card-body pt-0">
+                <table class="table table-bordered">
+                 
+                  
+                  <tr>
+                    <td width="30%">Course Title</td>
+                    <td width ="4%">Credit hours</td>
+                  </tr>
+                    <td width ="30%">Neural Network & Fuzzy Systems(CSE443)</td>
+                    <td width ="2%">3</td>
+                  </tr>
+                  <tr>
+                    <td >Compiler Design(CSE319)</td>
+                     <td width ="2%">3</td>
+                  </tr>
+                  <tr>
+                    <td >Compiler Design Lab(CSE320)</td>
+                     <td width ="2%">1.5</td>
+                  </tr>
+                  
+                  
+                </table>
+                <button type="button" ,align="right">Edit</button>
+              </div>
+            </div>
+              <div style="height: 26px"></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- partial -->
+               
+                </div>
+            </div>
+        </div>
+    </section>
+         
+    
+    
+        <!-- Analytics -->
+        
+    
+
+  </body>
+</html>
+      

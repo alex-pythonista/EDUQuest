@@ -11,7 +11,7 @@ def dev_page(request):
 
 def profile_view(request, *args, **kwargs): 
     context = {}
-    template_name = 'profile.html' 
+    template_name = 'studentApp/profile.html' 
     return render(request,template_name, context)
 
 def catalog_view(request,*args, **kwargs):
