@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Routine</title>
-    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="{% static 'css/studentApp/sidebar.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
   </head>
@@ -30,17 +32,17 @@
     <!--mobile navigation bar start-->
     <div class="mobile_nav">
       <div class="nav_bar">
-        <img src="logo.png" class="mobile_profile_image" alt="">
+        <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
-        <a href="#"><i class="fas fa-book"></i><span>Course Catalog</span></a>
+        <a href="#"><i class="fas fa-book"></i><span>More about Courses</span></a>
         <a href="#"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
         <a href="#"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
         <a href="#"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
         <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
         <a href="#"><i class="fas fa-donate"></i><span>Finances</span></a>
-        <a href="#"><i class="fas fa-comments"></i><span>Discussion Form</span></a>
+        <a href="#"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
         <a href="#"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
       </div>
     </div>
@@ -48,23 +50,23 @@
     <!--sidebar start-->
     <div class="sidebar">
       <div class="profile_info">
-        <img src="logo.png" class="profile_image" alt="">
+        <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
         <h4>EDUQuest</h4>
       </div>
-      <a href="#"><i class="fas fa-book"></i><span>Course Catalog</span></a>
+      <a href="#"><i class="fas fa-book"></i><span>More About Courses</span></a>
       <a href="#"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
       <a href="#"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
       <a href="#"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
       <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
       <a href="#"><i class="fas fa-donate"></i><span>Finances</span></a>
-      <a href="#"><i class="fas fa-comments"></i><span>Discussion Form</span></a>
+      <a href="#"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
       <a href="#"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
     </div>
     
     <div class="content">
       <center><h3><b>Class Routine</b></h3></center>
       <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{% static 'css/routine.css' %}">
   <title>Class Routine | CodyHouse</title>
  
 
@@ -220,8 +222,8 @@
     <div class="cd-schedule__cover-layer"></div>
   </div> <!-- .cd-schedule -->
 
-  <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
-  <script src="assets/js/main.js"></script>
+  <script src="{% static 'js/util.js' %}"></script> <!-- util functions included in the CodyHouse framework -->
+  <script src="{% static 'js/main.js' %}"></script>
      
       
 

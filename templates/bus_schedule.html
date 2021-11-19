@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_content %}
+
+<link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+
+{% endblock %}
+{% block js_content %}
+{% endblock %}
+
+
+
+{% block body_content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>EDU Bus Schedule</h2>
+
+<table>
+  <tr>
+    <th>Time</th>
+    <th>Route</th>
+    <th>Bus No.</th>
+    <th>Drivers</th>
+  </tr>
+  <tr>
+    <td>09.00 AM</td>
+    <td>Probortak cirlcle to EDU campus</td>
+    <td>Edu Bus - 01</td>
+    <td>Yasin</td>
+  </tr>
+  <tr>
+    <td>10.00 AM</td>
+    <td>Chawk Bazer Probortak cirlcle to EDU campus</td>
+    <td>Edu Bus - 02</td>
+    <td>Kawser</td>
+  </tr>
+  <tr>
+    <td>11.00 AM</td>
+    <td>Baropol-Agrabad to EDU campus via Probortak</td>
+    <td>Edu Bus - 03</td>
+    <td>Malek</td>
+  </tr>
+  <tr>
+    <td>12.30 PM</td>
+    <td>EDU campus to Probortak cirlcle</td>
+    <td>Edu Bus - 04</td>
+    <td>Jasim</td>
+  </tr>
+  <tr>
+    <td>03.30 PM</td>
+    <td>EDU campus to Baropol-Agrabad</td>
+    <td>Edu Bus - 01</td>
+    <td>Amir Ali</td>
+  </tr>
+  <tr>
+    <td>05.00 PM</td>
+    <td>EDU campus to Oxyzen-Muradpur-Chawk Bazer</td>
+    <td>Edu Bus - 02</td>
+    <td>Jahangir</td>
+  </tr>
+</table>
+</body>
+</html>
+
+{% endblock %}

@@ -16,15 +16,15 @@ def profile_view(request, *args, **kwargs):
 
 def catalog_view(request,*args, **kwargs):
     context = {}
-    template_name = 'catalog.html'
-    return HttpResponse("<h1>Course Catalog</h1>") 
-    #return render(request,template_name, context)
+    template_name = 'more_about_courses.html'
+    # return HttpResponse("<h1>Course Catalog</h1>") 
+    return render(request,template_name, context)
 
 def routine_view(request,*args, **kwargs): 
     context = {}
-    template_name = 'routine.html'
-    return HttpResponse("<h1>Personalized Routine</h1>") 
-    #return render(request,template_name, context)
+    template_name = 'routineApp/routine.html'
+    # return HttpResponse("<h1>Personalized Routine</h1>") 
+    return render(request,template_name, context)
 
 def schedule_checker_view(request,*args, **kwargs): 
     context = {}
@@ -58,5 +58,5 @@ def forum_view(request,*args, **kwargs):
 def bus_schedule_view(request,*args, **kwargs): 
     context = {}
     template_name = 'bus_schedule.html'
-    return HttpResponse("<h1>Bus Schedule</h1>") 
-    #return render(request,template_name, context)
+    # return HttpResponse("<h1>Bus Schedule</h1>") 
+    return render(request,template_name, context)

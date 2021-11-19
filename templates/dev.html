@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Sidebar Dashboard Template</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
   </head>
@@ -30,17 +31,17 @@
     <!--mobile navigation bar start-->
     <div class="mobile_nav">
       <div class="nav_bar">
-        <img src="images/logo.png" class="mobile_profile_image" alt="">
+        <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
-        <a href="#"><i class="fas fa-book"></i><span>Course Catalog</span></a>
+        <a href="#"><i class="fas fa-book"></i><span>More about Courses</span></a>
         <a href="#"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
         <a href="#"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
         <a href="#"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
         <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
         <a href="#"><i class="fas fa-donate"></i><span>Finances</span></a>
-        <a href="#"><i class="fas fa-comments"></i><span>Discussion Form</span></a>
+        <a href="#"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
         <a href="#"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
       </div>
     </div>
@@ -48,16 +49,16 @@
     <!--sidebar start-->
     <div class="sidebar">
       <div class="profile_info">
-        <img src="images/logo.png" class="profile_image" alt="">
+        <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
         
       </div>
-      <a href="#"><i class="fas fa-book"></i><span>Course Catalog</span></a>
+      <a href="#"><i class="fas fa-book"></i><span>More about Courses</span></a>
       <a href="#"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
       <a href="#"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
       <a href="#"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
       <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
       <a href="#"><i class="fas fa-donate"></i><span>Finances</span></a>
-      <a href="#"><i class="fas fa-comments"></i><span>Discussion Form</span></a>
+      <a href="#"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
       <a href="#"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
     </div>
     <!--sidebar end-->
@@ -66,7 +67,7 @@
 <head>
 	<title>Team Section</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="dev.css">
+	<link rel="stylesheet" href="{% static 'css/dev.css' %}">
 </head>
 <body>
   
@@ -74,18 +75,18 @@
      <div class="container">
          <div class="row">
              <div class="section-title">
-                 <h1>EDUQuest Developers</h1>
+                 <h1>EDUQuest Engineers</h1>
                  
              </div>
          </div>
          <div class="row">
              <div class="team-items">
                   <div class="item">
-                      <img src="images/alex.jpg" alt="team" />
+                      <img src="{% static 'images/alex.jpg' %}" alt="team" />
                       <div class="inner">
                           <div class="info">
                                <h5>Shaon Indrajit Barua Alex</h5>
-                               <p>Back End Developer</p>
+                               <p>Back End Engineer</p>
                                <div class="social-links">
                                    <a href="https://www.facebook.com/indrajitalex.nan"><span class="fa fa-facebook"></span></a>
                                    <a href="https://github.com/alex-pythonista"><span class="fa fa-github"></span></a>
@@ -96,11 +97,11 @@
                       </div>
                   </div>
                   <div class="item">
-                      <img src="images/tanzim.jpg" alt="team" />
+                      <img src="{% static 'images/dev-images/tanzim.jpg' %}" alt="team" />
                       <div class="inner">
                           <div class="info">
                                <h5>Tanzim Mushfique Ahmed</h5>
-                               <p>Back End Developer</p>
+                               <p>Back End Engineer</p>
                                <div class="social-links">
                                    <a href="https://www.facebook.com/tanzim.mushfique"><span class="fa fa-facebook"></span></a>
                                    <a href="https://github.com/Tmahmed"><span class="fa fa-github"></span></a>
@@ -111,11 +112,11 @@
                       </div>
                   </div>
                   <div class="item">
-                    <img src="images/tawuf.jpg" alt="team" />
+                    <img src="{% static 'images/tawuf.jpg' %}" alt="team" />
                     <div class="inner">
                         <div class="info">
                              <h5>Mohammad Tawuf Chowdhury</h5>
-                             <p>Front End Developer</p>
+                             <p>Front End Engineer</p>
                              <div class="social-links">
                                  <a href="https://www.facebook.com/TawufChy"><span class="fa fa-facebook"></span></a>
                                  <a href=""><span class="fa fa-github"></span></a>
@@ -126,11 +127,11 @@
                     </div>
                 </div>
                   <div class="item">
-                      <img src="images/shanjeev.jpg" alt="team" />
+                      <img src="{% static 'images/shanjeev.jpg' %}" alt="team" />
                       <div class="inner">
                           <div class="info">
                                <h5>Shanjeev Kumar Roy</h5>
-                               <p>Front End Developer</p>
+                               <p>Front End Engineer</p>
                                <div class="social-links">
                                    <a href="https://www.facebook.com/Shanjeevva/"><span class="fa fa-facebook"></span></a>
                                    <a href="https://github.com/Shanjeev-Kumar-Roy"><span class="fa fa-github"></span></a>
@@ -141,11 +142,11 @@
                       </div>
                   </div>
                   <div class="item">
-                      <img src="images/barsha.jpg" alt="team" />
+                      <img src="{% static 'images/barsha.jpg' %}" alt="team" />
                       <div class="inner">
                           <div class="info">
                                <h5>Fahmida Afroja Hoque Barsha</h5>
-                               <p>DevOps Developer</p>
+                               <p>DevOps Engineer</p>
                                <div class="social-links">
                                    <a href="https://www.facebook.com/profile.php?id=100027222915778"><span class="fa fa-facebook"></span></a>
                                    <a href="https://github.com/FBarsha"><span class="fa fa-github"></span></a>
