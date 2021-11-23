@@ -10,6 +10,7 @@ class Student(models.Model):
     semester = models.CharField(max_length=50)
     student_id = models.CharField(max_length=10, primary_key=True)
     address = models.CharField(max_length=500, default='UNKNOWN')
+    profile_picture = models.ImageField(upload_to='student_profile', blank=True, null=True)
 
     def __str__(self):
         return self.fullname + " " + self.student_id

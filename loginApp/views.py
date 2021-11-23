@@ -59,7 +59,7 @@ def login_page(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse('loginApp:home'))
+                return HttpResponseRedirect(reverse('StudentApp:profile'))
              
         else:
             return HttpResponse("invalid login information!")

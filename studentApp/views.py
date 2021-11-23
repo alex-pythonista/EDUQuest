@@ -1,6 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from django.contrib.auth.decorators import login_required
+
+from loginApp.models import Student
 # Create your views here.
 
 
@@ -9,8 +12,10 @@ def dev_page(request):
     template_name = 'dev.html'
     return render(request, template_name, context)
 
-def profile_view(request, *args, **kwargs): 
-    context = {}
+@login_required
+def profile_view(request):
+    studentProfile = Student.objects.get(user=request.user)
+    context = {'student': studentProfile}
     template_name = 'studentApp/profile.html' 
     return render(request,template_name, context)
 

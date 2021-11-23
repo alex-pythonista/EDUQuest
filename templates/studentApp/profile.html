@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Sidebar Dashboard Template</title>
+    <title>Student Profile</title>
     <link rel="stylesheet" href="{% static 'css/studentApp/sidebar.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
@@ -89,13 +89,13 @@
           <div class="col-lg-4">
             <div class="card shadow-sm">
               <div class="card-header bg-transparent text-center">
-                <img class="profile_img" src="{% static 'images/dev-images/tawuf.jpg' %}" alt="student dp">
-                <h3>Tawuf Chowdhury</h3>
+                <img class="profile_img" src="/media/{{student.profile_picture}}" alt="student dp">
+                <h3>{{student.fullname}}</h3>
               </div>
               <div class="card-body">
-                <p class="mb-0"><strong class="pr-1">Student ID:</strong>192001112</p>
-                <p class="mb-0"><strong class="pr-1">Program:</strong>B.Sc.</p>
-                <p class="mb-0"><strong class="pr-1">Address:</strong>Hathazari , Chattogram</p>
+                <p class="mb-0"><strong class="pr-1">Student ID:</strong>{{student.student_id}}</p>
+                <p class="mb-0"><strong class="pr-1">Program:</strong>{{student.department}}</p>
+                <p class="mb-0"><strong class="pr-1">Address:</strong>{{student.address}}</p>
               </div>
             </div>
           </div>
@@ -110,39 +110,39 @@
                   <tr>
                     <th width="30%">Semester	</th>
                     <td width="2%">:</td>
-                    <td>8th</td>
+                    <td>{{student.semester}}</td>
                   </tr>
                   
                   <tr>
                     <th width="30%">Department</th>
                     <td width="2%">:</td>
-                    <td>Computer Science & Engineering</td>
+                    <td>{{student.department}}</td>
                   </tr>
                   <tr>
                     <th width="30%">Credit completed</th>
                     <td width="2%">:</td>
-                    <td>90</td>
+                    <td></td>
                   </tr>
                   <tr>
                     <th width="30%">Credit remaining</th>
                     <td width="2%">:</td>
-                    <td>71</td>
+                    <td></td>
                   </tr>
                   <tr>
                     <th width="30%">Credit taken</th>
                     <td width="2%">:</td>
-                    <td>16.5</td>
+                    <td></td>
 
                     <tr>
                       <th width="30%">CGPA</th>
                       <td width="2%">:</td>
-                      <td>3.70</td>
+                      <td></td>
                   </tr>
                   
                   <tr>
                     <th width="30%">Gender</th>
                     <td width="2%">:</td>
-                    <td>Male</td>
+                    <td></td>
                   </tr>
                 </table>
                 <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Enrolled Courses:</h3>
