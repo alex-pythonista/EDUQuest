@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # EDUQuest apps
     'loginApp.apps.LoginappConfig',
     'studentApp.apps.StudentappConfig',
+    'forumApp.apps.ForumappConfig',
 ]
 
 MIDDLEWARE = [
