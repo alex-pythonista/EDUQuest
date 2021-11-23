@@ -13,7 +13,6 @@ urlpatterns = [
     path('progress/', views.progress_view, name = 'progress'),
     path('instructor/', views.instructor_view, name = 'instructor'), #done
     path('finances/', views.finances_view, name = 'finances'),
-    path('forum/', views.forum_view, name = 'forum'),
     path('bus_schedule/', views.bus_schedule_view, name = 'bus_schedule'), #uploaded
     path('catalog/', views.catalog_view, name = 'catalog'),    
 ]
