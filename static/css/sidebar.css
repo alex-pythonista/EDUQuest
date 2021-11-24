@@ -11,7 +11,7 @@ body{
     padding: 20px;
     width: calc(100% - 0%);
     top: 0;
-    height: 30px;
+    height: 70px;
   }
   
   .left_area h3{
@@ -236,7 +236,7 @@ body{
       text-decoration: none;
       box-sizing: border-box;
       transition: 0.5s;
-      /* transition-property: background; */
+      transition-property: background;
     }
   
     .mobile_nav_items a:hover{

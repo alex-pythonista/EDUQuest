@@ -22,7 +22,10 @@
       </label>
       <div class="left_area">
         <h3 style="color:rgb(83, 12, 6);">EDUQuest</h3>
-      
+     
+        <div class="right_area">
+          <a href="#" class="logout_btn">Logout</a>
+        </div>
     </header>
     <!--header area end-->
     <!--mobile navigation bar start-->
@@ -32,14 +35,14 @@
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
-        <a href="#"><i class="fas fa-book"></i><span>Course Catalog</span></a>
-        <a href="#"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
-        <a href="#"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
-        <a href="#"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
-        <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
-        <a href="#"><i class="fas fa-donate"></i><span>Finances</span></a>
-        <a href="/"><span>Discussion Form</span></a>
-        <a href="#"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+        <a href="{% url 'studentApp:catalog' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+      <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+      <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+      <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+      <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+      <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
+      <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
+      <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
       </div>
     </div>
     <!--mobile navigation bar end-->
@@ -49,14 +52,14 @@
         <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
        
       </div>
-      <a href="#"><i class="fas fa-book"></i><span>Course Catalog</span></a>
-      <a href="#"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
-      <a href="#"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
-      <a href="#"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
-      <a href="#"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
-      <a href="#"><i class="fas fa-donate"></i><span>Finances</span></a>
-      <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Form</span></a>
-      <a href="#"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+      <a href="{% url 'studentApp:catalog' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+      <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+      <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+      <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+      <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+      <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
+      <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
+      <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
     </div>
     
     <div class="content">
@@ -89,7 +92,7 @@
           <div class="col-lg-4">
             <div class="card shadow-sm">
               <div class="card-header bg-transparent text-center">
-                <img class="profile_img" src="/media/{{student.profile_picture}}" alt="student dp">
+                <img class="profile_img" src="{% static 'images/shanjeev.jpg' %}" alt="student dp">
                 <h3>{{student.fullname}}</h3>
               </div>
               <div class="card-body">
