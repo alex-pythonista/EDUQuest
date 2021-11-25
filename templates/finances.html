@@ -1,29 +1,22 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
-  <title>Bus Schedule</title>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finances</title>
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    
+  
+  </head>
+  <body>
+      
+   
+    
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-
-<input type="checkbox" id="check">
+    <input type="checkbox" id="check">
 <!--header area start-->
 <header>
   <label for="check">
@@ -31,6 +24,7 @@ tr:nth-child(even) {
       <h3 style="color:#fff">EDUQuest</h3>
     <i class="fas fa-bars" id="sidebar_btn"></i></div>
   </label>
+        <a href="#" class="logout_btn">Logout</a>
       
     </header>
     <!--header area end-->
@@ -40,6 +34,9 @@ tr:nth-child(even) {
         <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
         <i class="fa fa-bars nav_btn"></i>
       </div>
+     
+   
+   
       <div class="mobile_nav_items">
         <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
   <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
@@ -66,72 +63,76 @@ tr:nth-child(even) {
   <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
   <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
   <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+      
     </div>
     
     <div class="content">
-      
-    
-        <meta name="author" content="Codeconvey" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
-    
-        <!--Only for demo purpose - no need to add.-->
-        <link rel="stylesheet" href="{% static 'css/student_profile1.css' %}"/>
+      <head>
+
         
-            <link rel="stylesheet" href="{% static 'css/student_profile2.css' %}">
+      </head>
+  
+      
+      <body>
+        <h1>Finances</h1>
+        <hr>
+        <center><u><h1>Account Summary</h1></u></center>
+    
+       
+       
+    
+        <div> 
+            <h4 >
+            
+                <input type="checkbox" >
+                <label for="checkbox1"> BoT Grant</label><br>
+                <input type="checkbox">
+                <label for="checkbox2"> Zarin Zahara Memorial Scholarship</label><br>
+                <input type="checkbox" >
+                <label for="checkbox3"> 10%[in a specific time]</label><br><br>
+                  </h4>
+                  
+            <h2>
+                Credit: 16.5
+                <br>
+                Semester Fee <span style="padding: 100px;"></span>         =BDT11000
+                <br>
+                ID Card & Other Fees <span style="padding: 52px;"></span>  =BDT500
+                <br> 
+                Tution Fees <span style="padding: 108px;"></span> =BDT49500
+                <hr>
+                Total <span style="padding: 140px;"></span>  =BDT61000
+                <br>
+                <br>
+                BoT Grant <span style="padding: 110px;"></span> =BDT20460
+                <br>
+                <br>
+                10% discount on tution fees <span style="padding: 25px;"></span> =BDT2904
+                <hr>
+                Balance <span style="padding: 125px;"></span> =BDT37636
+            </h2>
+        
+            
+        </div>
+    
+       
+        <hr>
+    
+    </body>
+    
+        
+   
+         </div>    
+           
+      
+    </section>
+         
+    
+    
+        <!-- Analytics -->
+        
+    
 
-
-
-
-</head>
-<body>
-
-<h2>EDU Bus Schedule</h2>
-
-<table>
-  <tr>
-    <th>Time</th>
-    <th>Route</th>
-    <th>Bus No.</th>
-    <th>Drivers</th>
-  </tr>
-  <tr>
-    <td>09.00 AM</td>
-    <td>Probortak cirlcle to EDU campus</td>
-    <td>Edu Bus - 01</td>
-    <td>Yasin</td>
-  </tr>
-  <tr>
-    <td>10.00 AM</td>
-    <td>Chawk Bazer Probortak cirlcle to EDU campus</td>
-    <td>Edu Bus - 02</td>
-    <td>Kawser</td>
-  </tr>
-  <tr>
-    <td>11.00 AM</td>
-    <td>Baropol-Agrabad to EDU campus via Probortak</td>
-    <td>Edu Bus - 03</td>
-    <td>Malek</td>
-  </tr>
-  <tr>
-    <td>12.30 PM</td>
-    <td>EDU campus to Probortak cirlcle</td>
-    <td>Edu Bus - 04</td>
-    <td>Jasim</td>
-  </tr>
-  <tr>
-    <td>03.30 PM</td>
-    <td>EDU campus to Baropol-Agrabad</td>
-    <td>Edu Bus - 01</td>
-    <td>Amir Ali</td>
-  </tr>
-  <tr>
-    <td>05.00 PM</td>
-    <td>EDU campus to Oxyzen-Muradpur-Chawk Bazer</td>
-    <td>Edu Bus - 02</td>
-    <td>Jahangir</td>
-  </tr>
-</table>
-</body>
+  </body>
 </html>
-
+      

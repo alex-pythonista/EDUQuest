@@ -34,7 +34,7 @@ def routine_view(request,*args, **kwargs):
 def schedule_checker_view(request,*args, **kwargs): 
     context = {}
     template_name = 'schedule_checker.html'
-    return HttpResponse("<h1>Schedule Checker</h1>") 
+    return render(request,template_name, context)
 
 def progress_view(request,*args, **kwargs): 
     context = {}
@@ -51,14 +51,9 @@ def instructor_view(request,*args, **kwargs):
 def finances_view(request,*args, **kwargs): 
     context = {}
     template_name = 'finances.html'
-    return HttpResponse("<h1>Finances</h1>")
-    #return render(request,template_name, context)
+    #return HttpResponse("<h1>Finances</h1>")
+    return render(request,template_name, context)
         
-def forum_view(request,*args, **kwargs): 
-    context = {}
-    template_name = 'forum.html'
-    return HttpResponse("<h1>Discussion Forum</h1>") 
-    #return render(request,template_name, context)
 
 def bus_schedule_view(request,*args, **kwargs): 
     context = {}
