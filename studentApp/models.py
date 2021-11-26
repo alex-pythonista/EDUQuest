@@ -7,122 +7,154 @@ from loginApp.models import Student
 
 # Create your models here.
 
-class classroom(models.Model): 
-    building = models.CharField(max_length=100, default='Main') 
-    room_no = models.IntegerField(primary_key=True)
-    capacity = models.IntegerField(null = True) 
+class Building(models.Model):
+    building_id = models.CharField(primary_key=True, max_length=10)
+    building_name = models.CharField(max_length=50, blank=True, null=True)
 
     class Meta:
-        unique_together = ('building', 'room_no',)
+        db_table = 'building'
 
-class department(models.Model): 
-    dept_name = models.CharField(max_length=10, primary_key=True)
-    building = models.CharField(max_length=100, default='Main') 
+class Classroom(models.Model):
+    building_id = models.OneToOneField(Building, models.DO_NOTHING, primary_key=True, db_column='building_id')
+    room_no = models.IntegerField()
+    capacity = models.IntegerField(blank=True, null=True)
 
-class course(models.Model):
-    course_id = models.CharField(max_length=10, default='', primary_key=True)
-    title = models.CharField(max_length=200, default='')
-    credit = models.DecimalField(decimal_places=2, max_digits=3, default=3)
-    dept_name = models.ForeignKey(department, on_delete = models.DO_NOTHING)
+    class Meta:
+        db_table = 'classroom'
+        unique_together = (('building_id', 'room_no'),)
 
-class instructor(models.Model): 
-    inst_id = models.IntegerField(primary_key= True)
-    inst_name = models.CharField(max_length=100, default='') 
-    email = models.CharField(max_length=50, default='')
-    designation = models.CharField(max_length=50, default='Lecturer')
-    dept_name = models.ForeignKey(department, on_delete = models.DO_NOTHING)
+class Department(models.Model):
+    dept_name = models.CharField(primary_key=True, max_length=50)
+    building_id = models.ForeignKey(Building, models.DO_NOTHING, blank=True, null=True, db_column='building_id')
 
-class inst_field(models.Model): 
-   inst_id = models.ForeignKey(instructor, on_delete = models.DO_NOTHING, primary_key=True)
-   field_of_interest = models.CharField(max_length= 500)
+    class Meta:
+        db_table = 'department'
 
-   class Meta:
-        unique_together = ('inst_id', 'field_of_interest',)
+class Course(models.Model):
+    course_id = models.CharField(primary_key=True, max_length=8)
+    title = models.CharField(max_length=100, blank=True, null=True)
+    description = models.TextField(max_length=500, blank=True, null=True)
+    credits = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
+    dept_name = models.ForeignKey('Department', models.DO_NOTHING, db_column='dept_name', blank=True, null=True)
 
-class inst_degree(models.Model):
-    inst_id = models.ForeignKey(instructor, on_delete = models.DO_NOTHING, primary_key=True)
-    degree_name = models.CharField(max_length=100)
-    institution = models.CharField(max_length=100)
+    class Meta:
+        db_table = 'course'
+
+class Instructor(models.Model):
+    inst_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50, blank=True, null=True)
+    email = models.CharField(max_length=100, blank=True, null=True)
+    designation = models.CharField(max_length=100, blank=True, null=True)
+    dept_name = models.ForeignKey(Department, models.DO_NOTHING, db_column='dept_name', blank=True, null=True)
+
+    class Meta:
+        db_table = 'instructor'
+
+class InstField(models.Model):
+    inst_id = models.OneToOneField('Instructor', models.DO_NOTHING, primary_key=True, db_column='inst_id')
+    field_of_interest = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'inst_field'
+        unique_together = (('inst_id', 'field_of_interest'),)
+
+class InstDegree(models.Model):
+    inst_id = models.OneToOneField('Instructor', models.DO_NOTHING, primary_key=True, db_column='inst_id')
+    degree_name = models.CharField(max_length=200)
+    institution = models.CharField(max_length=200)
     country = models.CharField(max_length=100)
-    year = models.IntegerField(max_length=4)
+    degree_year = models.TextField()
 
     class Meta:
-        unique_together = ('inst_id', 'degree_name', 'institution', 'country', 'year',) 
+        db_table = 'inst_degree'
+        unique_together = (('inst_id', 'degree_name', 'institution', 'country', 'degree_year'),)
 
-class inst_publication(models.Model):
-    inst_id = models.ForeignKey(instructor, on_delete = models.DO_NOTHING, primary_key=True)
-    url = models.CharField(max_length=200)
-    title = models.CharField(max_length=200)
-    journal = models.CharField(max_length=200)
-    year = models.IntegerField(max_length=4)
+class InstPublication(models.Model):
+    inst_id = models.ForeignKey('Instructor', models.DO_NOTHING, db_column='inst_id')
+    url = models.CharField(max_length=500, blank=True, null=True)
+    title = models.CharField(max_length=500, blank=True, null=True)
+    journal = models.CharField(max_length=200, blank=True, null=True)
+    publication_year = models.TextField(blank=True, null=True)
 
-    class Meta: 
-        unique_together = ('inst_id', 'url', 'title', 'journal', 'year',)
+    class Meta:
+        db_table = 'inst_publication'
 
-class timeslot(models.Model): 
-    timeslot_id = models.CharField(max_length=5, primary_key=True, default= '')
-    day = models.CharField(max_length=3, default='')
-    start_time = models.TimeField(default='20:00')
-    end_time = models.TimeField(default='20:00')
+class Timeslot(models.Model):
+    timeslot_id = models.IntegerField(primary_key=True)
+    day = models.CharField(max_length=5)
+    start_time = models.TimeField()
+    end_time = models.TimeField(blank=True, null=True)
 
-    class Meta: 
-        unique_together = ('timeslot_id', 'day', 'start_time',)
+    class Meta:
+        db_table = 'timeslot'
+        unique_together = (('timeslot_id', 'day', 'start_time'),)
 
+class Section(models.Model):
+    course_id = models.OneToOneField(Course, models.DO_NOTHING, primary_key=True, db_column='course_id')
+    section_id = models.IntegerField()
+    semester = models.CharField(max_length=6)
+    section_year = models.TextField()
+    building_id = models.ForeignKey(Classroom, models.DO_NOTHING, db_column='building_id', related_name='section_classroom_buildingno')
+    room_no = models.ForeignKey(Classroom, models.DO_NOTHING, db_column='room_no', related_name='section_classroom_roomno')
+    timeslot_id = models.IntegerField()
 
-class section(models.Model): 
-    section_id = models.CharField(max_length=10, primary_key=True, default='')
-    course_id  = models.ForeignKey(course, on_delete = models.DO_NOTHING)
-    sem_code = models.CharField(max_length=5, default='')
-    building = models.CharField(max_length=100, default='Main') 
-    room_no = models.ForeignKey(classroom, on_delete=models.DO_NOTHING)
-    timeslot_id = models.ForeignKey(timeslot, on_delete=models.DO_NOTHING)
+    class Meta:
+        db_table = 'section'
+        unique_together = (('course_id', 'section_id', 'semester', 'section_year'),)
 
-    class Meta: 
-        unique_together = ('course_id', 'section_id', 'sem_code',)
+class InstTeaches(models.Model):
+    inst_id = models.OneToOneField('Instructor', models.DO_NOTHING, primary_key=True, db_column='inst_id')
+    course_id = models.ForeignKey('Section', models.DO_NOTHING, db_column='course_id', related_name='instteaches_section_courseid')
+    section_id = models.ForeignKey('Section', models.DO_NOTHING, db_column='section_id', related_name='instteaches_section_sectionid')
+    semester = models.ForeignKey('Section', models.DO_NOTHING, db_column='semester', related_name='instteaches_section_semester')
+    section_year = models.ForeignKey('Section', models.DO_NOTHING, db_column='section_year', related_name='instteaches_section_sectionyear')
 
+    class Meta:
+        db_table = 'inst_teaches'
+        unique_together = (('inst_id', 'course_id', 'section_id', 'semester', 'section_year'),)
 
-"""With alex"""
-# class teaches(models.Model): 
-#     inst_id = models.ForeignKey(instructor, on_delete = models.DO_NOTHING, primary_key=True) 
-#     course_id = models.ForeignKey(course, on_delete = models.DO_NOTHING)
-#     section_id = models.ForeignKey(section, on_delete= models.DO_NOTHING)
-#     sem_code = models.ForeignKey(section, on_delete= models.DO_NOTHING)
+class StudentCourse(models.Model):
+    student_id = models.OneToOneField(Student, models.DO_NOTHING, primary_key=True)
+    course_id = models.ForeignKey(Section, models.DO_NOTHING, db_column='course_id', related_name='studentcourse_section_courseid')
+    section_id = models.ForeignKey(Section, models.DO_NOTHING, db_column='section_id', related_name='studentcourse_section_sectionid')
+    semester = models.ForeignKey(Section, models.DO_NOTHING, db_column='semester', related_name='studentcourse_section_semester')
+    section_year = models.ForeignKey(Section, models.DO_NOTHING, db_column='section_year', related_name='studentcourse_section_sectionyear'), 
+    ct_1 = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True),
+    ct_2 = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True), 
+    ct_3 = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True),
+    quiz = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True), 
+    assignment_1 = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True), 
+    assignment_2 = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True), 
+    mid = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True),  
+    grade = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
 
+    class Meta:
+        db_table = 'student_course'
+        unique_together = (('student_id', 'course_id', 'section_id', 'semester',),)
 
-#     class Meta: 
-#         unique_together = ('inst_id', 'course_id', 'section_id', 'sem_code',)
+class Prereq(models.Model):
+    course_id = models.OneToOneField(Course, models.DO_NOTHING, primary_key=True, related_name='prereq_course_course')
+    prereq_id = models.ForeignKey(Course, models.DO_NOTHING, related_name='prereq_course_prereq')
 
-# class takes(models.Model): 
-#     student_id = models.ForeignKey(Student, on_delete=DO_NOTHING)
-#     course_id = models.ForeignKey(course, on_delete = models.DO_NOTHING)
-#     section_id = models.ForeignKey(section, on_delete= models.DO_NOTHING)
-#     sem_code = models.ForeignKey(section, on_delete= models.DO_NOTHING)
-#     ct1 = models.DecimalField(decimal_places=1, max_digits=3)
-#     ct2 = models.DecimalField(decimal_places=1, max_digits=3)
-#     mid = models.DecimalField(decimal_places=1, max_digits=3)
-#     assignment = models.DecimalField(decimal_places=1, max_digits=3)
+    class Meta:
+        db_table = 'prereq'
+        unique_together = (('course_id', 'prereq_id'),)
 
-#     class Meta: 
-#         unique_together = ('student_id', 'course_id', 'section_id', 'sem_code',)
+class Route(models.Model):
+    route_id = models.IntegerField(primary_key=True)
+    route_name = models.CharField(max_length=100, blank=True, null=True)
+    timeslot_id = models.ForeignKey('Timeslot', models.DO_NOTHING, blank=True, null=True, db_column='timeslot_id')
+    shuttle_id = models.CharField(max_length=5, blank=True, null=True)
+    remark = models.CharField(max_length=200, blank=True, null=True)
 
-# class prereq(models.Model): 
-#     course_id = models.ForeignKey(course, on_delete = models.DO_NOTHING)
-#     prereq_id = models.ForeignKey(course, on_delete = models.DO_NOTHING) 
+    class Meta:
+        db_table = 'route'
 
-#     class Meta: 
-#         unique_together = ('course_id', 'prereq_id',)
+class Driver(models.Model):
+    driver_id = models.IntegerField(primary_key=True)
+    driver_name = models.CharField(max_length=100)
+    route_id = models.ForeignKey('Route', models.DO_NOTHING, db_column='route_id')
 
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
+    class Meta:
+        db_table = 'driver'
+        unique_together = (('driver_id', 'driver_name', 'route_id'),)
