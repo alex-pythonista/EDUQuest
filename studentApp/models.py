@@ -63,7 +63,7 @@ class InstDegree(models.Model):
     degree_name = models.CharField(max_length=200)
     institution = models.CharField(max_length=200)
     country = models.CharField(max_length=100)
-    degree_year = models.TextField()
+    degree_year = models.CharField(max_length=4)
 
     class Meta:
         db_table = 'inst_degree'
@@ -74,7 +74,7 @@ class InstPublication(models.Model):
     url = models.CharField(max_length=500, blank=True, null=True)
     title = models.CharField(max_length=500, blank=True, null=True)
     journal = models.CharField(max_length=200, blank=True, null=True)
-    publication_year = models.TextField(blank=True, null=True)
+    publication_year = models.CharField(max_length=4, blank=True, null=True)
 
     class Meta:
         db_table = 'inst_publication'
@@ -93,7 +93,7 @@ class Section(models.Model):
     course_id = models.OneToOneField(Course, models.DO_NOTHING, primary_key=True, db_column='course_id')
     section_id = models.IntegerField()
     semester = models.CharField(max_length=6)
-    section_year = models.TextField()
+    section_year = models.CharField(max_length=4)
     building_id = models.ForeignKey(Classroom, models.DO_NOTHING, db_column='building_id', related_name='section_classroom_buildingno')
     room_no = models.ForeignKey(Classroom, models.DO_NOTHING, db_column='room_no', related_name='section_classroom_roomno')
     timeslot_id = models.IntegerField()

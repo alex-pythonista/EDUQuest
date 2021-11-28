@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'loginApp.apps.LoginappConfig',
     'studentApp.apps.StudentappConfig',
     'forumApp.apps.ForumappConfig',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
