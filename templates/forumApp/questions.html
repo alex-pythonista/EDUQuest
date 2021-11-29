@@ -11,49 +11,56 @@
     <title>Discussion Forum</title>
 
     <input type="checkbox" id="check">
-<!--header area start-->
-<header>
-  <label for="check">
-    <div class="left_area">
-      <h3 style="color:#fff">EDUQuest</h3>
-    <i class="fas fa-bars" id="sidebar_btn"></i></div>
-  </label>
-      
-    </header>
-    <!--header area end-->
-    <!--mobile navigation bar start-->
-    <div class="mobile_nav">
-      <div class="nav_bar">
-        <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
-        <i class="fa fa-bars nav_btn"></i>
-      </div>
-      <div class="mobile_nav_items">
-        <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
-  <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
-  <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
-  <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
-  <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
-  <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
-  <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
-  <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
-      </div>
-    </div>
-    <!--mobile navigation bar end-->
-    <!--sidebar start-->
-    <div class="sidebar">
-      <div class="profile_info">
-        <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
-       
-      </div>
-      <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
-  <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
-  <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
-  <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
-  <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
-  <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
-  <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
-  <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
-    </div>
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <div class="left_area">
+          <h3 style="color:#fff">EDUQuest</h3>
+        <i class="fas fa-bars" id="sidebar_btn"></i></div>
+      </label>
+         
+            <div class="right_area">
+              <a href="{% url 'loginApp:login' %}" class="logout_btn">Logout</a>
+              <a href="{% url 'studentApp:profile' %}" class="logout_btn">Home</a>
+    
+            </div>
+
+
+        </header>
+        <!--header area end-->
+        <!--mobile navigation bar start-->
+        <div class="mobile_nav">
+          <div class="nav_bar">
+            <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
+            <i class="fa fa-bars nav_btn"></i>
+          </div>
+          <div class="mobile_nav_items">
+            <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+      <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+      <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+      <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+      <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+      <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
+      <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
+      <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+          </div>
+        </div>
+        <!--mobile navigation bar end-->
+        <!--sidebar start-->
+        <div class="sidebar">
+          <div class="profile_info">
+            <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
+           
+          </div>
+          <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+      <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+      <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+      <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+      <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+      <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
+      <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
+      <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+        </div>
     
     <div class="content">
       
@@ -69,12 +76,13 @@
 </head>
 <body>
     <div class="container p-5">
-        <a href="{% url 'studentApp:profile' %}">HOME</a>
-        <center><h3>Support Forum</h3></center>
+      
+        <h1>Discussion Forum</h1>
+        <br>
 
         <div class="row">
             <div class="col-sm-6">
-                <h5>Questions</h5>
+                <h4>Questions</h4>
                 {% for question in questions %}
                 <p>
                     @{{question.student.fullname}} | <small>{{question.edited}}</small><br>
@@ -83,11 +91,12 @@
                 {% endfor %}
             </div>
             <div class="col-sm-6">
-                <h5>Ask your question here</h5>
+                <h5>Ask your question here:</h5>
+                <br>
                 <form action="" method="POST">
                     {{form.as_p}}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-info btn-sm">Ask</button>
+                    <center><button type="submit" class="btn btn-info btn-sm">Submit</button></center>
                 </form>
             </div>
         </div>

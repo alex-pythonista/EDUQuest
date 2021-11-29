@@ -46,17 +46,19 @@
 </style>
 
 <input type="checkbox" id="check">
-<!--header area start-->
-<header>
-  <label for="check">
-    <div class="left_area">
-      <h3 style="color:#fff">EDUQuest</h3>
-    <i class="fas fa-bars" id="sidebar_btn"></i></div>
-  </label>
- 
-    <div class="right_area">
-      <a href="{% url 'loginApp:login' %}" class="logout_btn">Logout</a>
-    </div>
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <div class="left_area">
+          <h3 style="color:#fff">EDUQuest</h3>
+        <i class="fas fa-bars" id="sidebar_btn"></i></div>
+      </label>
+         
+            <div class="right_area">
+              <a href="{% url 'loginApp:login' %}" class="logout_btn">Logout</a>
+              <a href="{% url 'studentApp:profile' %}" class="logout_btn">Home</a>
+    
+            </div>
 </header>
 <!--header area end-->
 <!--mobile navigation bar start-->
@@ -114,7 +116,7 @@
    <h2><label for="cars">Choose a option:</label></h2> 
     <select name="courses" id="courses" style="width: 150px;">
       <option value="completed">Completed</option>
-      <option value="enrolled">Enrolled</option>
+      <option value="enrolled">Not Completed</option>
     </select>
   </form>
 <br>

@@ -5,63 +5,67 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Routine </title>
+    <title>Instructor Profile</title>
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
   </head>
   <body>
       
-   
-
-
     <input type="checkbox" id="check">
     <!--header area start-->
     <header>
       <label for="check">
-        <i class="fas fa-bars" id="sidebar_btn"></i>
+        <div class="left_area">
+          <h3 style="color:#fff">EDUQuest</h3>
+        <i class="fas fa-bars" id="sidebar_btn"></i></div>
       </label>
-      <div class="left_area">
-        <h3>EDUQuest</h3>
-      </div>
-      <div class="right_area">
-        <a href="{% url 'loginApp:login' %}" class="logout_btn">Logout</a>
-      </div>
-    </header>
-    <!--header area end-->
-    <!--mobile navigation bar start-->
-    <div class="mobile_nav">
-      <div class="nav_bar">
-        <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
-        <i class="fa fa-bars nav_btn"></i>
-      </div>
-      <div class="mobile_nav_items">
-        <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
-  <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
-  <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
-  <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
-  <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
-  <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
-  <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
-  <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
-      </div>
-    </div>
-    <!--mobile navigation bar end-->
-    <!--sidebar start-->
-    <div class="sidebar">
-      <div class="profile_info">
-        <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
-      
-      </div>
-      <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
-  <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
-  <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
-  <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
-  <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
-  <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
-  <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
-  <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
-    </div>
+         
+            <div class="right_area">
+              <a href="{% url 'loginApp:login' %}" class="logout_btn">Logout</a>
+    
+            </div>
+
+            <div class="right_area">
+              <a href="{% url 'studentApp:profile' %}" class="logout_btn">Home</a>
+    
+            </div>
+
+        </header>
+        <!--header area end-->
+        <!--mobile navigation bar start-->
+        <div class="mobile_nav">
+          <div class="nav_bar">
+            <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
+            <i class="fa fa-bars nav_btn"></i>
+          </div>
+          <div class="mobile_nav_items">
+            <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+      <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+      <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+      <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+      <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+      <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
+      <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
+      <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+          </div>
+        </div>
+        <!--mobile navigation bar end-->
+        <!--sidebar start-->
+        <div class="sidebar">
+          <div class="profile_info">
+            <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
+           
+          </div>
+          <a href="{% url 'studentApp:courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+      <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+      <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+      <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+      <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+      <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
+      <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
+      <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+        </div>
     
     <div class="content">
       <center><h3><b>Class Routine</b></h3></center>
