@@ -8,12 +8,6 @@ from django.contrib.auth.models import User
 from .models import Student
 
 # Create your views here.
-
-@login_required
-def home(request):
-    return HttpResponse('Home page')
-
-
 def register(request):
 
     registered = False
@@ -74,3 +68,5 @@ def login_page(request):
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse('loginApp:login'))
+
+

@@ -12,7 +12,6 @@ def dev_page(request):
     template_name = 'dev.html'
     return render(request, template_name, context)
 
-@login_required
 def profile_view(request):
     studentProfile = Student.objects.get(user=request.user)
     context = {'student': studentProfile}
@@ -54,7 +53,6 @@ def finances_view(request,*args, **kwargs):
     #return HttpResponse("<h1>Finances</h1>")
     return render(request,template_name, context)
         
-
 def bus_schedule_view(request,*args, **kwargs): 
     context = {}
     template_name = 'bus_schedule.html'

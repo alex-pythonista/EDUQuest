@@ -14,5 +14,5 @@ urlpatterns = [
     path('instructor/', views.instructor_view, name = 'instructor'), #done
     path('finances/', views.finances_view, name = 'finances'),
     path('bus_schedule/', views.bus_schedule_view, name = 'bus_schedule'), #uploaded
-    path('courses/', views.catalog_view, name = 'courses'),    
+    path('courses/', views.catalog_view, name = 'courses'),
 ]
