@@ -25,7 +25,7 @@
   </label>
      
         <div class="right_area">
-          <a href="{% url 'loginApp:login' %}" class="logout_btn">Logout</a>
+          <a href="{% url 'loginApp:logout' %}" class="logout_btn">Logout</a>
 
         </div>
 
@@ -95,7 +95,7 @@
           <div class="col-lg-4">
             <div class="card shadow-sm">
               <div class="card-header bg-transparent text-center">
-                <img class="profile_img" src="{% static 'images/shanjeev.jpg' %}" alt="student dp">
+                <img class="profile_img" src="{{student.profile_picture.url}}" alt="student dp">
                 <h3>{{student.fullname}}</h3>
               </div>
               <div class="card-body">
