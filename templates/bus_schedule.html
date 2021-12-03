@@ -65,7 +65,7 @@ tr:nth-child(even) {
             <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
            
           </div>
-          <a href="{% url 'studentApp:more_about_courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+      <a href="{% url 'studentApp:more_about_courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
       <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
       <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
       <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
@@ -102,42 +102,19 @@ tr:nth-child(even) {
     <th>Bus No.</th>
     <th>Drivers</th>
   </tr>
+  {% for r in route %}
   <tr>
-    <td>09.00 AM</td>
-    <td>Probortak cirlcle to EDU campus</td>
-    <td>Edu Bus - 01</td>
-    <td>Yasin</td>
+    <td>{{r.timeslot_id}}</td>
+    <td>{{r.route_name}}</td>
+    <td>{{r.shuttle_id}}</td>
+
+    {% for d in driver %}
+    {% if r.route_id == d.route_id %}
+    <td>{{d.driver_name}}</td>
+    {% endif %}
+    {% endfor %}
   </tr>
-  <tr>
-    <td>10.00 AM</td>
-    <td>Chawk Bazer Probortak cirlcle to EDU campus</td>
-    <td>Edu Bus - 02</td>
-    <td>Kawser</td>
-  </tr>
-  <tr>
-    <td>11.00 AM</td>
-    <td>Baropol-Agrabad to EDU campus via Probortak</td>
-    <td>Edu Bus - 03</td>
-    <td>Malek</td>
-  </tr>
-  <tr>
-    <td>12.30 PM</td>
-    <td>EDU campus to Probortak cirlcle</td>
-    <td>Edu Bus - 04</td>
-    <td>Jasim</td>
-  </tr>
-  <tr>
-    <td>03.30 PM</td>
-    <td>EDU campus to Baropol-Agrabad</td>
-    <td>Edu Bus - 01</td>
-    <td>Amir Ali</td>
-  </tr>
-  <tr>
-    <td>05.00 PM</td>
-    <td>EDU campus to Oxyzen-Muradpur-Chawk Bazer</td>
-    <td>Edu Bus - 02</td>
-    <td>Jahangir</td>
-  </tr>
+  {% endfor %}
 </table>
 </body>
 </html>

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'studentApp.apps.StudentappConfig',
     'forumApp.apps.ForumappConfig',
     'django_extensions',
+    'mathfilters', 
 ]
 
 MIDDLEWARE = [

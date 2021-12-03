@@ -58,6 +58,7 @@ class Instructor(models.Model):
     email = models.CharField(max_length=100, blank=True, null=True)
     designation = models.CharField(max_length=100, blank=True, null=True)
     dept_name = models.ForeignKey(Department, models.DO_NOTHING, db_column='dept_name', blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='instructor_profile', blank=True, null=True)
 
     class Meta:
         db_table = 'instructor'

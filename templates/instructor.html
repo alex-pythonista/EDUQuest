@@ -79,10 +79,16 @@
     </head>
     <body>
       
-      <div  class="topnav" >
-        <input  type="text" placeholder="Search..">
-        
-      </div>
+      <form action="/action_page.php">
+        <h2><label for="cars">Choose an instructor:</label></h2> 
+        <br>
+         <select name="courses" id="courses" style="width: 300px;">  
+          {% for instructor in instructors %}
+           <option >{{instructor.name}} ({{instructor.dept_name}})</option>
+          {% endfor %} 
+         </select>
+         <button><a href = "#">Go</a></button>
+       </form>
             
  
     

@@ -1,4 +1,5 @@
 {% load static %}
+{% load mathfilters %}
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -127,22 +128,22 @@
                   <tr>
                     <th width="30%">Credit completed</th>
                     <td width="2%">:</td>
-                    <td>100</td>
+                    <td>{{student.credit_completed}}</td>
                   </tr>
                   <tr>
                     <th width="30%">Credit remaining</th>
                     <td width="2%">:</td>
-                    <td>61.25</td>
+                    <td>{{ 161.25|sub:student.credit_completed }}</td>
                   </tr>
                   <tr>
                     <th width="30%">Credit taken</th>
                     <td width="2%">:</td>
-                    <td>16.5</td>
+                    <td>{{student.credit_taken}}</td>
 
                     <tr>
                       <th width="30%">CGPA</th>
                       <td width="2%">:</td>
-                      <td>3.90</td>
+                      <td>{{student.cgpa}}</td>
                   </tr>
                   
                   

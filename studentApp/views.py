@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 from loginApp.models import Student
+from .models import *
 # Create your views here.
 
 
@@ -49,7 +50,8 @@ def progress_view(request,*args, **kwargs):
 
 @login_required
 def instructor_view(request,*args, **kwargs): 
-    context = {}
+    instructors_all = Instructor.objects.all()
+    context = {'instructors': instructors_all}
     template_name = 'instructor.html'
     #return HttpResponse("<h1>Instructor Profile</h1>") 
     return render(request,template_name, context)
@@ -63,10 +65,11 @@ def finances_view(request,*args, **kwargs):
         
         
 @login_required       
-def bus_schedule_view(request,*args, **kwargs): 
-    context = {}
+def bus_schedule_view(request,*args, **kwargs):
+    busRoute = Route.objects.all()
+    driverRoute = Driver.objects.all()
+    context = {'route': busRoute, 'driver': driverRoute} 
     template_name = 'bus_schedule.html'
-    # return HttpResponse("<h1>Bus Schedule</h1>") 
     return render(request,template_name, context)
 
 
