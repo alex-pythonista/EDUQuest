@@ -21,7 +21,7 @@ def profile_view(request):
     return render(request, template_name, context)
 
 @login_required
-def catalog_view(request,*args, **kwargs):
+def more_about_courses_view(request,*args, **kwargs):
     context = {}
     template_name = 'more_about_courses.html'
     # return HttpResponse("<h1>Course Catalog</h1>") 
