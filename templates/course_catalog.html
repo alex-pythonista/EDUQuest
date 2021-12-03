@@ -1,0 +1,135 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Bootstrap 4 Table with Checkboxes</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'><link rel="stylesheet" href="{% static 'css/course_catalog.css' %}">
+
+<style>
+.container {
+  padding: 2rem 0rem;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image td, .table-image th {
+  vertical-align: middle;
+}
+
+  .submit-button{
+    position: absolute;
+  left: 1500px;
+  }
+
+  .btn{
+    padding: 10px,20px;
+  }
+</style>
+
+</head>
+<body>
+  <h3><form action="/action_page.php">
+    <h2><label for="cars">Choose an option:</label></h2> 
+     <select name="courses" id="courses" style="width: 150px;">
+       <option value="completed">Enrolled</option>
+       <option value="enrolled">Completed</option>
+     </select>
+   </form><button type="button">Go</button></h3>
+
+
+  
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Select</th>
+            <th scope="col">Course Code</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Credits</th>
+            <th scope="col">Pre-requisite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                  <label class="custom-control-label" for="customCheck1">.</label>
+              </div>
+            </td>
+            
+            <td>CSE 111</td>
+            <td>Computer Fundamentals</td>
+            <td>3</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck3">
+                  <label class="custom-control-label" for="customCheck3">.</label>
+              </div>
+            </td>
+            
+            <td>CSE 113</td>
+            <td>Structured Programming Language</td>
+            <td>3</td>
+            <td>CSE-111</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck5">
+                  <label class="custom-control-label" for="customCheck5">.</label>
+              </div>
+            </td>
+            
+            <td>CSE 114</td>
+            <td>Structured Programming Language Laboratory</td>
+            <td>1.5</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck7">
+                  <label class="custom-control-label" for="customCheck7">.</label>
+              </div>
+            </td>
+           
+            <td>CSE 221</td>
+            <td>Algorithms</td>
+            <td>3</td>
+            <td>CSE-211,CSE-123</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck9">
+                  <label class="custom-control-label" for="customCheck9">.</label>
+              </div>
+            </td>
+           
+            <td>CSE 222</td>
+            <td>Algorithms</td>
+            <td>1.5</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+<center><button type="button">Submit</button></center>
+
+</body>
+</html>

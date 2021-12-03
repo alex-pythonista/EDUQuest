@@ -74,5 +74,5 @@ def bus_schedule_view(request,*args, **kwargs):
 def course_catalog_view(request,*args, **kwargs):
     context = {}
     template_name = 'course_catalog.html'
-    return HttpResponse("<h1>Course Catalog</h1>") 
-    #return render(request,template_name, context)
+    #return HttpResponse("<h1>Course Catalog</h1>") 
+    return render(request,template_name, context)
