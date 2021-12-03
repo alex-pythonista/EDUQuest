@@ -15,4 +15,5 @@ urlpatterns = [
     path('finances/', views.finances_view, name = 'finances'),
     path('bus_schedule/', views.bus_schedule_view, name = 'bus_schedule'), #uploaded
     path('more_about_courses/', views.more_about_courses_view, name = 'more_about_courses'),
+    path('course_catalog/', views.course_catalog_view, name = 'course_catalog'),
 ]
