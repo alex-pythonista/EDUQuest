@@ -9,7 +9,7 @@ body{
 }
 
 .team-section{
-	background-color:#600024;
+	background-color:#fff;
 	min-height: 100vh;
 	padding:70px 15px 30px;
 }
@@ -70,7 +70,7 @@ body{
 	padding:0 15px;
 }
 .team-section .team-items .item .inner .info{
-	background-color:#600024;
+	background-color:white;
 	text-align: center;
 	padding: 20px 15px;
 	border-radius:8px;

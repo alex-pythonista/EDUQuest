@@ -6,7 +6,8 @@
   <meta charset="UTF-8">
   <title>CodePen - Bootstrap 4 Table with Checkboxes</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'><link rel="stylesheet" href="{% static 'css/course_catalog.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'><link rel="stylesheet" href="{% static 'css/course_catalog.css' %}">
 
 <style>
 .container {
@@ -30,7 +31,55 @@ h4 {
     padding: 10px,20px;
   }
 </style>
+<input type="checkbox" id="check">
+<!--header area start-->
+<header>
+  <label for="check">
+    <div class="left_area">
+      <h3 style="color:#fff">EDUQuest</h3>
+    <i class="fas fa-bars" id="sidebar_btn"></i></div>
+  </label>
+     
+        <div class="right_area">
+          <a href="{% url 'loginApp:logout' %}" class="logout_btn">Logout</a>
 
+        </div>
+
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <img src="{% static 'images/logo.png' %}" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+  <a href="{% url 'studentApp:more_about_courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+  <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+  <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+  <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+  <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+  <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
+  <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
+  <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <img src="{% static 'images/logo.png' %}" class="profile_image" alt="">
+       
+      </div>
+      <a href="{% url 'studentApp:more_about_courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+  <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
+  <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
+  <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
+  <a href="{% url 'studentApp:instructor' %}"><i class="fas fa-chalkboard-teacher"></i><span>Instructor Profile</span></a>
+  <a href="{% url 'studentApp:finances' %}"><i class="fas fa-donate"></i><span>Finances</span></a>
+  <a href="{% url 'forumApp:forum' %}"><i class="fas fa-comments"></i><span>Discussion Forum</span></a>
+  <a href="{% url 'studentApp:bus_schedule' %}"><i class="fas fa-bus"></i><span>Bus Schedule</span></a>
+    </div>
 </head>
 <body>
   <h3><form action="/action_page.php">

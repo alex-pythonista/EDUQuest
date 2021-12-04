@@ -50,7 +50,7 @@ class Course(models.Model):
         db_table = 'course'
 
     def __str__(self):
-        return str(self.course_id)
+        return str(self.title) + " (" + str(self.course_id) + " )"
 
 class Instructor(models.Model):
     inst_id = models.AutoField(primary_key=True)
@@ -161,13 +161,14 @@ class StudentCourse(models.Model):
     assignment2 = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True) 
     mid = models.DecimalField(max_digits=3, decimal_places=1, blank=True, null=True)  
     grade = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
+    status = models.CharField(max_length=1, null=True, blank=True) # enrolled/completed
 
     class Meta:
         db_table = 'student_course'
         unique_together = (('student_id', 'course_id', 'section_id', 'sem_code',),)
 
     def __str__(self):
-        return str(self.student_id) + " " + str(self.course_id) + " " + str(self.sem_code)
+        return str(self.student_id) + " " + str(self.course_id)
 
 class Prereq(models.Model):
     course_id = models.ForeignKey(Course, models.DO_NOTHING, related_name='prereq_course_course')
@@ -181,7 +182,7 @@ class Prereq(models.Model):
         return str(self.course_id) + " " + str(self.prereq_id)
 
 class Route(models.Model):
-    route_id = models.AutoField(primary_key=True)
+    route_id = models.IntegerField(primary_key=True)
     route_name = models.CharField(max_length=100, blank=True, null=True)
     timeslot_id = models.ForeignKey(Timeslot, models.DO_NOTHING, blank=True, null=True, db_column='timeslot_id')
     shuttle_id = models.CharField(max_length=5, blank=True, null=True)
@@ -191,7 +192,7 @@ class Route(models.Model):
         db_table = 'route'
 
     def __str__(self):
-        return str(self.route_name) + " " + str(self.timeslot_id)
+        return str(self.route_id)
 
 class Driver(models.Model):
     driver_id = models.CharField(max_length=5)

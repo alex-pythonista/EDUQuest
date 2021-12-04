@@ -100,19 +100,14 @@ tr:nth-child(even) {
     <th>Time</th>
     <th>Route</th>
     <th>Bus No.</th>
-    <th>Drivers</th>
   </tr>
   {% for r in route %}
   <tr>
-    <td>{{r.timeslot_id}}</td>
+    {% with time=r.timeslot_id|cut:"Mon" %}
+    <td>{{ time|cut:"None"}}</td>
+    {% endwith %}
     <td>{{r.route_name}}</td>
     <td>{{r.shuttle_id}}</td>
-
-    {% for d in driver %}
-    {% if r.route_id == d.route_id %}
-    <td>{{d.driver_name}}</td>
-    {% endif %}
-    {% endfor %}
   </tr>
   {% endfor %}
 </table>

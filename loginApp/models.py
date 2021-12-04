@@ -16,4 +16,4 @@ class Student(models.Model):
     profile_picture = models.ImageField(upload_to='student_profile', blank=True, null=True)
 
     def __str__(self):
-        return self.fullname + " " + self.student_id
+        return self.student_id

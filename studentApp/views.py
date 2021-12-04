@@ -17,7 +17,9 @@ def dev_page(request):
 @login_required
 def profile_view(request):
     studentProfile = Student.objects.get(user=request.user)
-    context = {'student': studentProfile}
+    studentEnrolled = StudentCourse.objects.all().filter(status='E')
+    courseInfo = Course.objects.all()
+    context = {'student': studentProfile, 'enrolled': studentEnrolled, 'course': courseInfo}
     template_name = 'studentApp/profile.html' 
     return render(request, template_name, context)
 
@@ -31,8 +33,14 @@ def more_about_courses_view(request,*args, **kwargs):
 @login_required
 def routine_view(request,*args, **kwargs): 
     context = {}
-    template_name = 'routineApp/routine.html'
-    # return HttpResponse("<h1>Personalized Routine</h1>") 
+    studentProfile = Student.objects.get(user=request.user) 
+    if studentProfile.fullname == 'Mostafijur Rahman': 
+        template_name = 'routineApp/routine_2.html'
+    elif studentProfile.fullname == 'Shanjeev Kumar Roy': 
+        template_name = 'routineApp/routine_3.html'
+    else: 
+        template_name = 'routineApp/routine.html'
+    #return HttpResponse("<h1>Personalized Routine</h1>") 
     return render(request,template_name, context)
 
 @login_required
@@ -58,7 +66,8 @@ def instructor_view(request,*args, **kwargs):
 
 @login_required
 def finances_view(request,*args, **kwargs): 
-    context = {}
+    studentProfile = Student.objects.get(user=request.user)
+    context = {'student': studentProfile}
     template_name = 'finances.html'
     #return HttpResponse("<h1>Finances</h1>")
     return render(request,template_name, context)

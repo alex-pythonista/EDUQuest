@@ -8,13 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile</title>
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
   </head>
-  <body>
-      
-   
-
+  
 
     <input type="checkbox" id="check">
 <!--header area start-->
@@ -39,7 +37,7 @@
         <i class="fa fa-bars nav_btn"></i>
       </div>
       <div class="mobile_nav_items">
-        <a href="{% url 'studentApp:more_about_courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
+  <a href="{% url 'studentApp:more_about_courses' %}"><i class="fas fa-book"></i><span>More about Courses</span></a>
   <a href="{% url 'studentApp:routine' %}"><i class="far fa-clock"></i><span>Personalized Routine</span></a>
   <a href="{% url 'studentApp:schedule_checker' %}"><i class="far fa-calendar-check"></i><span>Schedule Checker</span></a>
   <a href="{% url 'studentApp:progress' %}"><i class="fas fa-tasks"></i><span>Course Progress</span></a>
@@ -77,8 +75,9 @@
         <link rel="stylesheet" href="{% static 'css/studentApp/demo.css' %}" />
         
             <link rel="stylesheet" href="{% static 'css/studentApp/studentProfile.css' %}">
-    </head>
-    <body>
+            
+    
+  <body>
             
  
     
@@ -158,17 +157,19 @@
                     <td width="30%">Course Title</td>
                     <td width ="4%">Credit hours</td>
                   </tr>
-                    <td width ="30%">Neural Network & Fuzzy Systems(CSE443)</td>
-                    <td width ="2%">3</td>
+                  {% for enrolled_course in enrolled %}
+                 
+                    <td width ="30%">{{enrolled_course.course_id}}</td>
+                    
+                    {% for c in course %}
+                    {% if c.course_id == enrolled_course.course_id %}
+                    <td width ="2%">{{c.credits}}</td>
+                    {% endif %}
+                  {% endfor %}
                   </tr>
-                  <tr>
-                    <td >Compiler Design(CSE319)</td>
-                     <td width ="2%">3</td>
-                  </tr>
-                  <tr>
-                    <td >Compiler Design Lab(CSE320)</td>
-                     <td width ="2%">1.5</td>
-                  </tr>
+                  {% endfor %}
+                 
+                  
                   
                   
                 </table>
@@ -190,9 +191,27 @@
          
     
     
-        <!-- Analytics -->
-        
-      
+    <section class="footer">
+      <center>
+      <div class="footer-desc">
+      &copy;EDUQuest 2021. Developed with <span style="color: red; font-size: 1.5rem">❤</span> by EDUQuest.
+      </div>
+    </center>
+  </section>  
+  
+      <style>
+        .footer{
+          background: #121212;
+          color: #fff;
+          
+        }
+
+        .footer .footer-desc{
+          margin-top: 40px;
+        }
+      </style>
   </body>
+
+
 </html>
       

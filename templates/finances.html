@@ -1,4 +1,5 @@
 {% load static %}
+{% load mathfilters %}
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -93,26 +94,42 @@
                   </h4>
                   <button><a href = "#">Go</a></button>    
             <h2>
-                Credit: <b>16.5</b>
+                Credit: <b>{{student.credit_taken}}</b>
                 <br>
                 <br>
-                Semester Fee <span style="padding: 200px;"></span>         = BDT 11,000
+                Semester Fee <span style="padding: 200px;"></span>         = BDT 11000.00
                 <br>
-                ID Card & Other Fees <span style="padding: 157px;"></span>  = BDT 500
+                {% with sem=11000 %}
+                ID Card & Other Fees <span style="padding: 157px;"></span>  = BDT 500.00
+                {% with id=500 %}
                 <br> 
-                Tution Fees <span style="padding: 211px;"></span> = BDT 49,500
+                {% with credits=student.credit_taken %}
+                Tuition Fees <span style="padding: 211px;"></span> = BDT {{ credits|mul:3000 }}
                 <hr>
                 <hr>
-                Total <span style="padding: 250px;"></span>  = BDT 61,000
+                {% with tuition=credits|mul:3000 %}
+                {% with total1=tuition|addition:sem %}
+                {% with total2=total1|addition:id %}
+                Total <span style="padding: 250px;"></span>  = BDT {{total2}}
+                
+              
+              
                 <br>
                 <br>
-                BoT Grant <span style="padding: 219px;"></span> - BDT 20,460
+                BoT Grant <span style="padding: 219px;"></span> - BDT {{total2|mul:0.41}}
                 <br>
                 <br>
-                10% discount on tution fees <span style="padding: 118px;"></span> - BDT 2904
+                10% discount on tuition fees <span style="padding: 118px;"></span> - BDT 2904
                 <hr>
                 <hr>
                 Balance <span style="padding: 230px;"></span> = BDT 37,636
+
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
             </h2>
         
             
@@ -134,7 +151,25 @@
     
         <!-- Analytics -->
         
+        <section class="footer">
+          <center>
+          <div class="footer-desc">
+          &copy;EDUQuest 2021. Developed with <span style="color: red; font-size: 1.5rem">❤</span> by EDUQuest.
+          </div>
+        </center>
+      </section>  
+      
+          <style>
+            .footer{
+              background: #121212;
+              color: #fff;
+              
+            }
     
+            .footer .footer-desc{
+              margin-top: 40px;
+            }
+          </style> 
 
   </body>
 </html>
