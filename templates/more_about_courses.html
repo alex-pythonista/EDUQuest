@@ -112,46 +112,37 @@
 </head>
 <body>
 
-  <form action="/action_page.php">
-   <h2><label for="cars">Choose an option:</label></h2> 
-    <select name="courses" id="courses" style="width: 150px;">
-      <option value="completed">Completed</option>
-      <option value="enrolled">Not Completed</option>
-    </select>
-    <button><a href = "#">Go</a></button>
-  </form>
+ 
 <br>
 <br>
-<h1>Course Table</h1>
+<h1>Course Tables</h1>
+<br>
+<table id="customers">
+  <tr>
+    <th>Completed Courses</th>
+    
+  </tr>
+  {% for completed_course in completed %}
+  <tr>
+    <td>{{completed_course.course_id}}</td>
+    {% endfor %}
+  </tr>
+
+</table>
+<br> 
 
 <table id="customers">
   <tr>
-    <th>Course Name</th>
-    <th>Course Code</th>
-    <th>Credits</th>
-    <th>Pre-requisite</th>
+    <th>Not Completed Courses</th>
+    
   </tr>
+  {% for not_completed_course in notcompleted %}
   <tr>
-    <td>CSE 111</td>
-    <td>Computer Fundamentals</td>
-    <td>3</td>
-    <td>None</td>
+    <td>{{not_completed_course.course_id}}</td>
+    {% endfor %}
   </tr>
-  <tr>
-    <td>CSE 113</td>
-    <td>Structured Programming Language</td>
-    <td>3</td>
-    <td>CSE-111</td>
-  </tr>
-  <tr>
-    <td>CSE 114</td>
-    <td>Structured Programming Language Laboratory</td>
-    <td>1.5</td>
-    <td></td>
-  </tr>
-  
-</table>
 
+</table>
 </body>
 </html>
 

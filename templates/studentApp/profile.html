@@ -155,17 +155,14 @@
                   
                   <tr>
                     <td width="30%">Course Title</td>
-                    <td width ="4%">Credit hours</td>
-                  </tr>
-                  {% for enrolled_course in enrolled %}
-                 
-                    <td width ="30%">{{enrolled_course.course_id}}</td>
                     
-                    {% for c in course %}
-                    {% if c.course_id == enrolled_course.course_id %}
-                    <td width ="2%">{{c.credits}}</td>
-                    {% endif %}
-                  {% endfor %}
+                  </tr>
+                  {% for enrolled_course in enrolled %}                     
+                        <td width ="30%">{{enrolled_course.course_id}}</td>     
+                        
+                       
+
+                                 
                   </tr>
                   {% endfor %}
                  

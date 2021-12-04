@@ -17,15 +17,18 @@ def dev_page(request):
 @login_required
 def profile_view(request):
     studentProfile = Student.objects.get(user=request.user)
-    studentEnrolled = StudentCourse.objects.all().filter(status='E')
-    courseInfo = Course.objects.all()
-    context = {'student': studentProfile, 'enrolled': studentEnrolled, 'course': courseInfo}
+    courseEnrolled = StudentCourse.objects.all().filter(student_id=studentProfile.student_id).filter(status='E')
+    courseInfo = Course.objects.all().filter(course_id='CSE443')
+    context = {'student': studentProfile, 'enrolled': courseEnrolled, 'courses': courseInfo}
     template_name = 'studentApp/profile.html' 
     return render(request, template_name, context)
 
 @login_required
 def more_about_courses_view(request,*args, **kwargs):
-    context = {}
+    studentProfile = Student.objects.get(user=request.user)
+    courseCompleted = StudentCourse.objects.all().filter(student_id=studentProfile.student_id).filter(status='C')
+    courseNotComplete = StudentCourse.objects.all().filter(student_id=studentProfile.student_id).filter(status='N')
+    context = {'student': studentProfile, 'completed': courseCompleted, 'notcompleted': courseNotComplete}
     template_name = 'more_about_courses.html'
     # return HttpResponse("<h1>Course Catalog</h1>") 
     return render(request,template_name, context)
