@@ -18,7 +18,7 @@ def dev_page(request):
 def profile_view(request):
     studentProfile = Student.objects.get(user=request.user)
     courseEnrolled = StudentCourse.objects.all().filter(student_id=studentProfile.student_id).filter(status='E')
-    courseInfo = Course.objects.all().filter(course_id='CSE443')
+    courseInfo = Course.objects.all()
     context = {'student': studentProfile, 'enrolled': courseEnrolled, 'courses': courseInfo}
     template_name = 'studentApp/profile.html' 
     return render(request, template_name, context)
