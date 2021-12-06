@@ -84,7 +84,8 @@
     
         <div> 
             <h4 >
-            
+              <form method="POST">
+                {% csrf_token %}
                 <input type="checkbox" >
                 <label for="checkbox1"> BoT Grant</label><br>
                 <input type="checkbox">
@@ -92,7 +93,9 @@
                 <input type="checkbox" >
                 <label for="checkbox3"> 10%[Early payment discount]</label><br><br>
                   </h4>
-                  <button><a href = "#">Go</a></button>    
+                  <input type="submit" name="submit" value="Submit"/>
+                </form>    
+
             <h2>
                 Credit: <b>{{student.credit_taken}}</b>
                 <br>

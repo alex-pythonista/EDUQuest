@@ -51,6 +51,7 @@ class Course(models.Model):
 
     def __str__(self):
         return str(self.title) + " (" + str(self.course_id) + " )"
+        #return str(self.course_id)
 
 class Instructor(models.Model):
     inst_id = models.AutoField(primary_key=True)
