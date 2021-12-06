@@ -1,12 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
 from django.contrib.auth.decorators import login_required
-
+from django import forms 
 from loginApp.models import Student
 from .models import *
-# Create your views here.
+#Create your views here.
 
+class Discount(forms.Form):
+    checkbox1 = forms.BooleanField(required=False)
+    checkbox2 = forms.BooleanField(required=False)
+    checkbox3 = forms.BooleanField(required=False)
 
 def dev_page(request):
     context = {}
@@ -69,8 +72,39 @@ def instructor_view(request,*args, **kwargs):
 
 @login_required
 def finances_view(request,*args, **kwargs): 
+    context = {}
     studentProfile = Student.objects.get(user=request.user)
-    context = {'student': studentProfile}
+    context['student'] = studentProfile
+    
+    form = Discount(request.POST or None)
+    if request.method == "POST": 
+
+        if request.POST.get("checkbox1"): 
+            multiplier = 0.41
+            context['BOT'] = multiplier
+        else: 
+            multiplier = 0
+            context['BOT'] = multiplier
+
+        if request.POST.get("checkbox2"): 
+            disc = 5000
+            context['Zarin'] = disc
+        else: 
+            disc = 0
+            context['Zarin'] = disc
+
+        if request.POST.get("checkbox3"):
+            multiplier = 0.1
+            context['Early'] = multiplier
+        else: 
+            multiplier = 0
+            context['Early'] = multiplier
+
+        if request.POST.get(None): 
+            context['BOT'] = 0
+            context['Zarin'] = 0
+            context['Early'] = 0
+        
     template_name = 'finances.html'
     #return HttpResponse("<h1>Finances</h1>")
     return render(request,template_name, context)

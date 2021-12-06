@@ -86,11 +86,12 @@
             <h4 >
               <form method="POST">
                 {% csrf_token %}
-                <input type="checkbox" >
+                {{ form.as_p }}
+                <input type="checkbox" name="checkbox1">
                 <label for="checkbox1"> BoT Grant</label><br>
-                <input type="checkbox">
+                <input type="checkbox" name="checkbox2">
                 <label for="checkbox2"> Zarin Zahara Memorial Scholarship</label><br>
-                <input type="checkbox" >
+                <input type="checkbox" name="checkbox3">
                 <label for="checkbox3"> 10%[Early payment discount]</label><br><br>
                   </h4>
                   <input type="submit" name="submit" value="Submit"/>
@@ -113,26 +114,38 @@
                 {% with tuition=credits|mul:3000 %}
                 {% with total1=tuition|addition:sem %}
                 {% with total2=total1|addition:id %}
-                Total <span style="padding: 250px;"></span>  = BDT {{total2}}
-                
-              
-              
+                Total <span style="padding: 250px;"></span>  = BDT {{total2}}            
                 <br>
                 <br>
-                BoT Grant <span style="padding: 219px;"></span> - BDT {{total2|mul:0.41}}
-                <br>
-                <br>
-                10% discount on tuition fees <span style="padding: 118px;"></span> - BDT 2904
+                BoT Grant <span style="padding: 219px;"></span> - BDT {{ total2|mul:BOT }}<br>
+                Zarin Zahara Scholarship <span style="padding: 135px;"></span> - BDT {{ Zarin }}<br>
+                10% discount on tuition fees <span style="padding: 118px;"></span> - BDT {{ total2|mul:Early }}
                 <hr>
                 <hr>
-                Balance <span style="padding: 230px;"></span> = BDT 37,636
+                {% with bot=total2|mul:BOT %}
+                {% with zarindisc=Zarin %}
+                {% with earlydisc=total2|mul:Early %}
 
+                {% with total3=total2|sub:bot %}
+                {% with total4=total3|sub:zarindisc %}
+                {% with total5=total4|sub:earlydisc %}
+
+                Balance <span style="padding: 230px;"></span> = BDT {{total5}}
+
+                
                 {% endwith %}
                 {% endwith %}
                 {% endwith %}
                 {% endwith %}
                 {% endwith %}
                 {% endwith %}
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
+
             </h2>
         
             
