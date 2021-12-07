@@ -1,6 +1,7 @@
 {% load static %}
 {% load mathfilters %}
 
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -108,31 +109,35 @@
                 {% with id=500 %}
                 <br> 
                 {% with credits=student.credit_taken %}
-                Tuition Fees <span style="padding: 211px;"></span> = BDT {{ credits|mul:3000 }}
+                Tuition Fees <span style="padding: 211px;"></span> = BDT {{ credits|mul:3000|floatformat:2 }}
                 <hr>
                 <hr>
                 {% with tuition=credits|mul:3000 %}
                 {% with total1=tuition|addition:sem %}
                 {% with total2=total1|addition:id %}
-                Total <span style="padding: 250px;"></span>  = BDT {{total2}}            
+                Total <span style="padding: 250px;"></span>  = BDT {{ tuition|addition:sem|addition:id|floatformat:2 }}            
                 <br>
                 <br>
-                BoT Grant <span style="padding: 219px;"></span> - BDT {{ total2|mul:BOT }}<br>
-                Zarin Zahara Scholarship <span style="padding: 135px;"></span> - BDT {{ Zarin }}<br>
-                10% discount on tuition fees <span style="padding: 118px;"></span> - BDT {{ total2|mul:Early }}
+                {% with amountbot=BOT %}
+                {% with amountearly=Early %}
+                BoT Grant <span style="padding: 219px;"></span> - BDT {{ tuition|addition:sem|addition:id|mul:amountbot|floatformat:2 }}<br>
+                Zarin Zahara Scholarship <span style="padding: 135px;"></span> - BDT {{ Zarin|floatformat:2 }}<br>
+                10% discount on tuition fees <span style="padding: 118px;"></span> - BDT {{ tuition|addition:sem|addition:id|mul:amountearly|floatformat:2 }}
                 <hr>
                 <hr>
-                {% with bot=total2|mul:BOT %}
+                {% with bot=total2|mul:amountbot %}
                 {% with zarindisc=Zarin %}
-                {% with earlydisc=total2|mul:Early %}
+                {% with earlydisc=total2|mul:amountearly %}
 
                 {% with total3=total2|sub:bot %}
                 {% with total4=total3|sub:zarindisc %}
                 {% with total5=total4|sub:earlydisc %}
 
-                Balance <span style="padding: 230px;"></span> = BDT {{total5}}
+                Balance <span style="padding: 230px;"></span> = BDT {{ total5|floatformat:2 }}
 
                 
+                {% endwith %}
+                {% endwith %}
                 {% endwith %}
                 {% endwith %}
                 {% endwith %}
