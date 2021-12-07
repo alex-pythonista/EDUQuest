@@ -25,7 +25,7 @@
       <h3 style="color:#fff">EDUQuest</h3>
     <i class="fas fa-bars" id="sidebar_btn"></i></div>
   </label>
-  <a href="{% url 'loginApp:logout' %}" class="logout_btn">Logout</a>
+  
   <a href="{% url 'studentApp:profile' %}" class="logout_btn">Home</a>
       
     </header>
@@ -122,7 +122,7 @@
                 {% with amountearly=Early %}
                 BoT Grant <span style="padding: 219px;"></span> - BDT {{ tuition|addition:sem|addition:id|mul:amountbot|floatformat:2 }}<br>
                 Zarin Zahara Scholarship <span style="padding: 135px;"></span> - BDT {{ Zarin|floatformat:2 }}<br>
-                10% discount on tuition fees <span style="padding: 118px;"></span> - BDT {{ tuition|addition:sem|addition:id|mul:amountearly|floatformat:2 }}
+                10% discount <span style="padding: 203px;"></span> - BDT {{ tuition|addition:sem|addition:id|mul:amountearly|floatformat:2 }}
                 <hr>
                 <hr>
                 {% with bot=total2|mul:amountbot %}
